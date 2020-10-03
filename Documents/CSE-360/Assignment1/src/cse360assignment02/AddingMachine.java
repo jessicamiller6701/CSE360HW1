@@ -11,39 +11,81 @@
 
 package cse360assignment02; //inherits from package cse360assignment02
 
-public class AddingMachine //calling class AddingMachine
+/**
+ * This public class is being called AddingMachine
+ */
+public class AddingMachine
 {
-    private int total; //declaring private integer called total
+    /**
+     * Variables and StringBuffer being declared
+     */
+    private int total;
+    StringBuffer history;
 
-    public AddingMachine ()  //method called AddingMachine
+    /**
+     * calling method AddingMachine
+     * using to set total to 0, and the stringbuffer history to 0
+     */
+    public AddingMachine ()
     {
-        total = 0;  // not needed - included for clarity
+        total = 0;
+        history = new StringBuffer("0");
     }
 
-    public int getTotal ()  //method called getTotal
+    /**
+     * calling method getTotal
+     * returns current value of var total
+     */
+
+    public int getTotal ()
     {
-        return 0; //return getTotal
+        return total;
     }
 
-    public void add (int value)  //void method called add
+    /**
+     * calling method add
+     * takes value as parameter and modifies accordingly for the command ".add"
+     * appends the stringbuffer as is appropriate
+     */
+
+    public void add (int value)
     {
+        total = total + value;
+        history.append(" + "+value);
     }
 
-    public void subtract (int value)  //void method called subtract
+    /**
+     * calling method subtract
+     * takes value as parameter and modifies accordingly for the command ".sub"
+     *
+     */
+
+    public void subtract (int value)
     {
+        total = total - value;
+        history.append(" - "+value);
     }
 
-    public String toString ()  //toString method called String
+    /**
+     * calling method String as a toString method
+     * returns the history and what has been appended
+     */
+
+    public String toString ()
     {
-        return ""; //return a string
+        return history.toString();
     }
 
-    public void clear()  //void method called clear
+    /**
+     * calling method clear
+     * no content at the moment
+     */
+
+    public void clear()
     {
     }
 }
 
 /** <h1>Resources</h1>
  * https://idratherbewriting.com/java-share-files/
- *
  */
